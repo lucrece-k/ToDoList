@@ -26,3 +26,12 @@ form.addEventListener("submit", (e) => {
   //   reset l'input
   newDo.value = "";
 });
+// Mettre un listener sur le parent qui contient les items
+listGroup.addEventListener("click", (e) => {
+  // si le target a une class bi-trash, la balise li qui le contient est supprimée
+  if (e.target.classList.contains("bi-trash")) {
+    const item = e.target.closest("li");
+    item.remove();
+    console.log("suprimer l'item");
+  }
+});
