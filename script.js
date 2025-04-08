@@ -35,3 +35,12 @@ listGroup.addEventListener("click", (e) => {
     console.log("suprimer l'item");
   }
 });
+listeFilter = document.querySelector(".btn-group");
+listeFilter.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn")) {
+    const allButtons = listeFilter.querySelectorAll(".btn");
+    allButtons.forEach((btn) => btn.classList.remove("active"));
+    const button = e.target.closest("button");
+    button.classList.add("active");
+  }
+});
